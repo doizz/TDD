@@ -1,58 +1,53 @@
 package com.example.tdd;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.xml.transform.Result;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
 public class CarRacing {
 
-    private InputView inputView;
+    private static final int RANDOM_MAX_VALUE =10;
+    private static final int MIN_NUMBER =4;
+
     private ResultView resultView;
-
-    public CarRacing(){
-        this.inputView = new InputView();
-        this.resultView = new ResultView();
-    }
     public void goGame() {
+        int number = 0;
 
-        /*
         InputView inputView = new InputView();
-        ResultView resultView = new ResultView();
-        */
 
-        Scanner scanner = new Scanner(System.in);
-        int value = inputView.CarsCount(scanner);
-        int number = inputView.TryCount(scanner);
+        inputView.inputViewQuestion();
+        Map<String, String> carsMap = new HashMap<String, String>();
 
-        String[] car = new String[value];
-        ArrayReset(car);
+        for (int i = 0; i < inputView.getCardCount(); i++) {
+            carsMap.put("car"+i, "");
+        }
+
         for (int j = 0; j < number; j++) {
-            CarsGoAndStop(car);
-            resultView.resultView(car);
+            CarsGoAndStop(carsMap);
+            resultView.resultView(carsMap);
         }
 
     }
 
 
-    private static void ArrayReset(String[] car) {
-        for (int i = 0; i < car.length; i++) {
-            car[i] = "";
-        }
-    }
 
     //자동차가 이동할지 멈출지 판별한다.
-    private static void CarsGoAndStop(String[] car) {
-        for (int i = 0; i < car.length; i++) {
-            car[i] += randomCount();
+    private static void CarsGoAndStop(Map<String, String> carsMap) {
+        System.out.println("carsMap.size() = " + carsMap.size());
+        for (int i = 0; i < carsMap.size(); i++) {
+            carsMap.put("car"+i , carsMap.get("car"+i)+randomCount());
         }
     }
 
     //random메소드를 사용하여 4이상일 경우에만 전진을 한다.
     private static String randomCount() {
         Random random = new Random();
-        return random.nextInt(10) >= 4 ? "-": "";
+        if(random.nextInt(RANDOM_MAX_VALUE) >= MIN_NUMBER){
+            return "-";
+        }
+        return "";
     }
 
 
