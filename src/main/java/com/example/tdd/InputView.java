@@ -10,12 +10,12 @@ public class InputView {
       public void inputViewQuestion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("자동차 대수는 몇 대 인가요?");
-        int CarsCount = sc.nextInt();
+        CarsCount = sc.nextInt();
         System.out.println("시도할 회수는 몇 회 인가요?");
-        int TryCount = sc.nextInt();
+        TryCount = sc.nextInt();
     }
 
-    public int getCardCount(){
+    public int getCarCount(){
         return CarsCount;
     }
 
