@@ -1,13 +1,13 @@
-package com.example.tdd;
+package com.example.tdd.common;
 
 import java.util.Scanner;
 
 public class InputView {
 
-    private int CarsCount;
-    private int TryCount;
+    private static int CarsCount;
+    private static int TryCount;
 
-      public void inputViewQuestion() {
+      public static void inputViewQuestion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("자동차 대수는 몇 대 인가요?");
         CarsCount = sc.nextInt();
@@ -15,11 +15,11 @@ public class InputView {
         TryCount = sc.nextInt();
     }
 
-    public int getCarCount(){
+    public static int getCarCount(){
         return CarsCount;
     }
 
-    public int getTryCount(){
+    public static int getTryCount(){
         return TryCount;
     }
 }

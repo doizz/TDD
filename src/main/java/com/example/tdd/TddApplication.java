@@ -1,11 +1,8 @@
 package com.example.tdd;
 
+import com.example.tdd.service.CarRacing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Random;
-import java.util.Scanner;
-import java.util.stream.Stream;
 
 @SpringBootApplication
 public class TddApplication {
@@ -14,6 +11,6 @@ public class TddApplication {
         SpringApplication.run(TddApplication.class, args);
 
         CarRacing carRacing = new CarRacing();
-        carRacing.goGame();
+        carRacing.racingStart();
     }
 }
