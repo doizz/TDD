@@ -11,6 +11,9 @@ public class Car {
     private Distance distance;
     private static List<Car> cars = new ArrayList<>();
 
+    public Car() {
+    }
+
     public static void moveCars() {
         //Car리스트 생성.
         createCarList(InputView.getCarCount());
