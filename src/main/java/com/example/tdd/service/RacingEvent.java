@@ -11,11 +11,9 @@ import static com.example.tdd.domain.Distance.moveForward;
 public class RacingEvent {
 
     public static void carMove(List<Car> cars) {
-        System.out.println("cars.size() = " + cars.size());
         for (int i = 0; i < InputView.getTryCount(); i++) {
             tryCarRacing(cars);
         }
-
     }
 
     public static void carForward(){

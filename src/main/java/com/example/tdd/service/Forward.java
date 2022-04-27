@@ -11,6 +11,6 @@ public class Forward implements MovableStrategy {
 
     @Override
     public boolean isCarMoving() {
-        return RANDOM_MAX_VALUE >= MIN_NUMBER;
+        return random.nextInt(RANDOM_MAX_VALUE) >= MIN_NUMBER;
     }
 }

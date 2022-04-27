@@ -15,6 +15,8 @@ public class InputView {
         TryCount = sc.nextInt();
     }
 
+    private InputView() {}
+
     public static int getCarCount(){
         return CarsCount;
     }

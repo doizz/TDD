@@ -8,7 +8,6 @@ public class ResultView {
     public static void resultStartMessage(){System.out.println("실행결과");}
 
     public static void carDistanceView(Car car){
-        System.out.println("car.getCarDistance() = " + car.getCarDistance());
         for (int i = 0; i < car.getCarDistance(); i++) {
             resultMessage("-");
         }
