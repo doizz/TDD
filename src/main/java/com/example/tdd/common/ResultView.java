@@ -13,4 +13,6 @@ public class ResultView {
         }
         newLine();
     }
+
+    private ResultView() {}
 }

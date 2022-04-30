@@ -1,16 +1,20 @@
 package com.example.tdd.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
 
-    private List<Car> cars;
+    private static List<Car> cars  = new ArrayList<>();
 
     private Cars() {
     }
 
-    private Cars(List<Car> cars) {
-        this.cars = cars;
+    public static List<Car> createCarList(int carCount) {
+        for (int i = 0; i < carCount; i++) {
+            cars.add(new Car());
+        }
+        return cars;
     }
 
 }

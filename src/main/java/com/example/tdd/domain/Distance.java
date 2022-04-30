@@ -2,15 +2,14 @@ package com.example.tdd.domain;
 
 public class Distance {
 
-    private static int distance = 0;
+    private int distance = 0;
 
     public int Distance (){
-        return this.distance;
+        return distance;
     }
 
-    public static void moveForward(){
+    public void moveForward(){
         distance++;
     }
-
     public Distance(){}
 }
