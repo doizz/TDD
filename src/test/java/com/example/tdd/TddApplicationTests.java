@@ -7,7 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @SpringBootTest
 class TddApplicationTests {
@@ -33,6 +37,34 @@ class TddApplicationTests {
         assertEquals(new Forward().isCarMoving(), true);
         assertEquals(new Forward().isCarMoving(), true);
         assertEquals(new Forward().isCarMoving(), true);
+    }
+
+    @Test
+    void 자동차이름부여(){
+        Car car1 = new Car("aaa");
+        Car car2 = new Car("bbb");
+    }
+
+    @Test
+    void  자동차이름5글자초과(){
+        String name = "aaaa";
+        if(name.length() > 5){
+            throw new IllegalArgumentException("글자수 초과");
+        }
+        System.out.println("name = " + name);
+    }
+
+    @Test
+    void 자동차이름은쉼표로구분(){
+        List<String> carName = new ArrayList<String>();
+        carName.add("aaa");
+        carName.add("bbb");
+        carName.add("ccc");
+
+        String[] winnerArr = carName.toArray(new String[carName.size()]);
+        String winner = String.join(", ", winnerArr);
+
+        System.out.println("winner = " + winner);
     }
 
 }
