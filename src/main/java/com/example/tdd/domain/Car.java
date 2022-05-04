@@ -1,12 +1,14 @@
 package com.example.tdd.domain;
 
 import com.example.tdd.service.Forward;
+import com.example.tdd.service.MovableStrategy;
 
 public class Car {
 
     private static final int CAR_NAME_MAX_LENGTH =10;
     private Distance distance;
     private String name;
+
 
     public Car(String name) {
         nameLengthValidation(name);
@@ -21,9 +23,9 @@ public class Car {
     }
 
     public void carForward(){
-        if(new Forward().isCarMoving()){
-            this.distance.moveForward();
-        }
+//        if(MovableStrategy.isCarMoving()){
+//            this.distance.moveForward();
+//        }
     }
     public int getCarDistance() {
         return distance.Distance();
