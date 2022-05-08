@@ -21,13 +21,13 @@ public class RacingEvent {
 
     private void tryCarRacing(List<Car> cars){
         for(Car car : cars){
-            car.carForward();
+            car.carForward(new Forward());
             ResultView.carDistanceView(car);
         }
         maxDistacne(cars);
     }
 
-    public void moveCars() {
+    public void racingStartCars() {
         //Car리스트 생성.
 //        carsList = Cars.createCarList(InputView.getCarCount());
         carsList = Cars.createCarList(InputView.getcarsName());

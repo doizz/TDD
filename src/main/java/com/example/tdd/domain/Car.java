@@ -8,9 +8,10 @@ public class Car {
     private static final int CAR_NAME_MAX_LENGTH =10;
     private Distance distance;
     private String name;
+    private MovableStrategy movableStrategy;
 
 
-    public Car(String name) {
+    public Car(String name ) {
         nameLengthValidation(name);
         this.name = name;
         this.distance = new Distance();
@@ -22,7 +23,10 @@ public class Car {
         }
     }
 
-    public void carForward(){
+    public void carForward(MovableStrategy movableStrategy){
+        if(movableStrategy.isCarMoving()){
+            this.distance.moveForward();
+        }
 //        if(MovableStrategy.isCarMoving()){
 //            this.distance.moveForward();
 //        }
