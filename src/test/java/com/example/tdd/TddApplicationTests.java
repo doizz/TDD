@@ -16,8 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 @SpringBootTest
 class TddApplicationTests {
 
-//    @BeforeEach
-//    void beforeEach() {Car car = new Car();}
 
     @Test
     void 객체생성() {

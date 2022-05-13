@@ -27,9 +27,6 @@ public class Car {
         if(movableStrategy.isCarMoving()){
             this.distance.moveForward();
         }
-//        if(MovableStrategy.isCarMoving()){
-//            this.distance.moveForward();
-//        }
     }
     public int getCarDistance() {
         return distance.Distance();

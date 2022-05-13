@@ -17,16 +17,10 @@ public class Cars {
         String[] names = carsName.split(",");
 
         for (int i = 0; i < names.length; i++) {
-//            names.get(i);
             cars.add(new Car(names[i]));
         }
         return cars;
     }
-//    public static List<Car> createCarList(int carCount) {
-//        for (int i = 0; i < carCount; i++) {
-//            cars.add(new Car());
-//        }
-//        return cars;
-//    }
+
 
 }
