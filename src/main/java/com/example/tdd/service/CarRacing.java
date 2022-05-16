@@ -1,7 +1,6 @@
 package com.example.tdd.service;
 
 import com.example.tdd.common.InputView;
-import com.example.tdd.domain.Car;
 
 public class CarRacing {
     public void racingStart() {

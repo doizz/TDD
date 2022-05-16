@@ -11,8 +11,9 @@ import java.util.List;
 public class RacingEvent {
 
     private static List<Car> carsList;
-    public static int maxDistance =0;
 
+    //cars를 리턴받아야함. 일급컬렉션사용해야함.
+    // private static List<Car> carsList;
 
     public RacingEvent() {
         this.carsList = carsList;

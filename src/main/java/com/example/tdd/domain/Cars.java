@@ -14,6 +14,7 @@ public class Cars {
     }
 
     public static List<Car> createCarList(String carsName) {
+        //split 예외처리 추가하기
         String[] names = carsName.split(",");
 
         for (int i = 0; i < names.length; i++) {

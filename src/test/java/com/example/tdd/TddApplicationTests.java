@@ -10,39 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
 @SpringBootTest
 class TddApplicationTests {
-
+   //테스트는 도메인별로 분리
 
     @Test
     void 이동(){
         Car car = new Car("doizz");
         car.carForward(new Forward());
         assertThat(car.getCarDistance()).isEqualTo(1);
-    }
-
-    @Test
-    void 이동거리테스트() {
-//        assertEquals(new Forward().isCarMoving(), true);
-//        assertEquals(new Forward().isCarMoving(), true);
-//        assertEquals(new Forward().isCarMoving(), true);
-    }
-
-    @Test
-    void 자동차이름부여() {
-        Car car1 = new Car("aaa");
-        Car car2 = new Car("bbb");
-    }
-
-    @Test
-    void 자동차이름5글자초과() {
-        String name = "aaaa";
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("글자수 초과");
-        }
-        System.out.println("name = " + name);
     }
 
     @Test
@@ -54,9 +33,14 @@ class TddApplicationTests {
 
         String[] winnerArr = carName.toArray(new String[carName.size()]);
         String winner = String.join(", ", winnerArr);
-
     }
 
+    @Test
+    void 자동차이름5글자초과() {
+        assertThatThrownBy(() ->{
+            new Car("aaaaaa");
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
 
     @Test
     void 우승자찾기() {

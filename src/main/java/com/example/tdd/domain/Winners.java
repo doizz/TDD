@@ -31,7 +31,6 @@ public class Winners {
         return winnerList;
     }
 
-    public Winners() {
-    }
+    public Winners() {}
 
 }

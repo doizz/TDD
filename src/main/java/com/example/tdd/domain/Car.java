@@ -1,6 +1,5 @@
 package com.example.tdd.domain;
 
-import com.example.tdd.service.Forward;
 import com.example.tdd.service.MovableStrategy;
 
 import java.util.Objects;
