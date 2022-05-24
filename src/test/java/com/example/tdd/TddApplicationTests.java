@@ -2,7 +2,9 @@ package com.example.tdd;
 
 import com.example.tdd.domain.Car;
 import com.example.tdd.domain.Distance;
+import com.example.tdd.domain.Name;
 import com.example.tdd.service.Forward;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -45,24 +47,25 @@ class TddApplicationTests {
     @Test
     void 우승자찾기() {
         List<Car> cars = new ArrayList<>();
-        cars.add(new Car("man1", new Distance(3)));
-        cars.add(new Car("man2", new Distance(2)));
-        cars.add(new Car("man3", new Distance(1)));
+        cars.add(new Car(new Name("man1"), new Distance(3)));
+        cars.add(new Car(new Name("man2"), new Distance(2)));
+        cars.add(new Car(new Name("man3"), new Distance(1)));
 
         List<Car> winners = Winners.findWinners(cars);
-        assertThat(winners).contains(new Car("man1", new Distance(3)));
+        assertThat(winners).contains(new Car(new Name("man1"), new Distance(3)));
     }
 
     @Test
+    @DisplayName("최대이동거리 유무 판단 테스트")
     void 최대이동거리_유무() {
         int maxDistance = 3;
-        assertThat(new Car("doizz", new Distance(3)).isMaxDistance(maxDistance)).isTrue();
-        assertThat(new Car("doizz", new Distance(2)).isMaxDistance(maxDistance)).isFalse();
+        assertThat(new Car(new Name("doizz"), new Distance(3)).isMaxDistance(maxDistance)).isTrue();
+        assertThat(new Car(new Name("doizz"), new Distance(2)).isMaxDistance(maxDistance)).isFalse();
     }
 
     @Test
     void 최대이동거리_구하기() {
-        Car car = new Car("doizz", new Distance(3));
+        Car car = new Car(new Name("doizz"), new Distance(3));
         assertThat(car.maxDistance(2)).isEqualTo(3);
         assertThat(car.maxDistance(4)).isEqualTo(4);
     }

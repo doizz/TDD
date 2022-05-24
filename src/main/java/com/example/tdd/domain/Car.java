@@ -5,33 +5,21 @@ import com.example.tdd.service.MovableStrategy;
 import java.util.Objects;
 
 public class Car {
-
-    private static final int CAR_NAME_MAX_LENGTH = 5;
     private Distance distance;
-    private final String name;
+    private Name name;
 
-    public Car(String name) {
-        this(name, new Distance());
+    public Car(String carName) {
+        this(new Name(carName), new Distance());
     }
-
-    public Car(String name, Distance distance) {
-        nameLengthValidation(name);
+    public Car(Name name, Distance distance) {
         this.name = name;
         this.distance = distance;
     }
-
-    private void nameLengthValidation(String name) {
-        if(name.length() > CAR_NAME_MAX_LENGTH){
-            throw new IllegalArgumentException("이름은 5글자를 넘어갈수 없습니다.");
-        }
-    }
-
     public void carForward(MovableStrategy movableStrategy){
         if(movableStrategy.isCarMoving()){
             this.distance.moveForward();
         }
     }
-
     public boolean isMaxDistance(int maxDistance) {
         return this.getCarDistance() == maxDistance;
     }
@@ -42,15 +30,10 @@ public class Car {
         }
         return maxDistance;
     }
-
-
     public int getCarDistance() {
         return distance.Distance();
     }
-    public String getCarName(){
-        return name;
-    }
-
+    public String getCarName() {return name.getName();}
     @Override
     public String toString() {
         return "Car{" +
@@ -58,7 +41,6 @@ public class Car {
                 ", name='" + name + '\'' +
                 '}';
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,10 +48,10 @@ public class Car {
         Car car = (Car) o;
         return Objects.equals(distance, car.distance) && Objects.equals(name, car.name);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(distance, name);
     }
+
 
 }
