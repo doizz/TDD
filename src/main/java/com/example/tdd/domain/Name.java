@@ -3,7 +3,6 @@ package com.example.tdd.domain;
 import com.example.tdd.exception.NameLengthException;
 
 public class Name {
-
     private static final int CAR_NAME_MAX_LENGTH = 5;
     private String name = "";
     public Name(String name) {

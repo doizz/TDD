@@ -6,18 +6,15 @@ public class Distance {
 
     private int distance = 0;
 
-    public int Distance() {
+    public int Distance (){
         return distance;
     }
 
-    public void moveForward() {
+    public void moveForward(){
         distance++;
     }
-
-    public Distance() {
-    }
-
-    public Distance(int distance) {
+    public Distance(){}
+    public Distance(int distance){
         this.distance = distance;
     }
 
