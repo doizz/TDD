@@ -10,7 +10,7 @@ import java.util.List;
 public class RacingEvent {
     private void tryCarRacing(List<Car> cars) {
         for (Car car : cars) {
-            car.carForward(new Forward());
+            car.carForward(new RandomMove());
             ResultView.carDistanceView(car);
         }
         Winners.maxDistance(cars);

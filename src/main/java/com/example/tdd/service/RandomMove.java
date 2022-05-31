@@ -2,7 +2,7 @@ package com.example.tdd.service;
 
 import java.util.Random;
 
-public class Forward implements MovableStrategy {
+public class RandomMove implements MovableStrategy {
 
     private static final int RANDOM_MAX_VALUE =10;
     private static final int MIN_NUMBER =4;

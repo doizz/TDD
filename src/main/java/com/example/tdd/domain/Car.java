@@ -27,11 +27,11 @@ public class Car {
         return this.getCarDistance() == maxDistance;
     }
 
-    public int maxDistance(int maxDistance) {
-        if (maxDistance < this.getCarDistance()) {
+    public int maxDistance(int currentDistance) {
+        if (currentDistance < this.getCarDistance()) {
             return this.getCarDistance();
         }
-        return maxDistance;
+        return currentDistance;
     }
 
     public int getCarDistance() {
